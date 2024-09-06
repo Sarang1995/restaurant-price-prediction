@@ -1,0 +1,92 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<p>Please fill below information to get a prediction</p>
+
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <br>
+    <div>
+        {{ form.online_order.label }}
+        {{ form.online_order }}
+        {% if form.online_order.errors %}
+             {% for error in form.online_order.errors %}
+             <div>{{error}}</div>
+             {% endfor %}
+        {% endif %}
+    </div>
+    <br>
+    <div>
+        {{ form.book_table.label }}
+        {{ form.book_table }}
+        {% if form.book_table.errors %}
+             {% for error in form.book_table.errors %}
+             <div>{{error}}</div>
+             {% endfor %}
+        {% endif %}
+    </div>
+    <br>
+    <div>
+        {{ form.rate.label }}
+        {{ form.rate }}
+        {% if form.rate.errors %}
+             {% for error in form.rate.errors %}
+             <div>{{error}}</div>
+             {% endfor %}
+        {% endif %}
+    </div>
+    <br>
+    <div>
+        {{ form.votes.label }}
+        {{ form.votes }}
+        {% if form.votes.errors %}
+             {% for error in form.votes.errors %}
+             <div>{{error}}</div>
+             {% endfor %}
+        {% endif %}
+    </div>
+    <br>
+    <div>
+        {{ form.rest_type.label }}
+        {{ form.rest_type }}
+        {% if form.rest_type.errors %}
+             {% for error in form.rest_type.errors %}
+             <div>{{error}}</div>
+             {% endfor %}
+        {% endif %}
+    </div>
+    <br>
+    <div>
+        {{ form.type.label }}
+        {{ form.type }}
+        {% if form.type.errors %}
+             {% for error in form.type.errors %}
+             <div>{{error}}</div>
+             {% endfor %}
+        {% endif %}
+    </div>
+    <br>
+    <div>
+        {{ form.location.label }}
+        {{ form.location }}
+        {% if form.location.errors %}
+             {% for error in form.location.errors %}
+             <div>{{error}}</div>
+             {% endfor %}
+        {% endif %}
+    </div>
+    <br>
+    <div>
+        {{ form.submit() }}
+    </div>
+    <br>
+    <div>
+        {{ output }}
+    </div>
+    <div>
+        <p>Redirect to Homepage? <a href="{{ url_for('home') }}">Home</a></p>
+    </div>
+</form>
+
+{% endblock content %}

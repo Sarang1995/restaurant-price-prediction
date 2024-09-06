@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h3>This is the Restaurant price prediction model based on Machine Learning</h3>
+<div>
+    <p>Click below button to see prediction</p>
+    <ul>
+        <li><a href="{{url_for('predict')}}" target="_blank">Prediction</a></li>
+    </ul>
+</div>
+
+{% endblock content %}
